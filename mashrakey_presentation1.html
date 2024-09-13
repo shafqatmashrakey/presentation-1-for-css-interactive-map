@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="author" content="Shafqat Mashrakey" />
+  <title>Presentation Template</title>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="scripts/slidy.css" /> <!-- http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css -->
+  <script src="scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script> <!-- http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js-->
+  <script src="scripts/jquery-3.3.1.min.js"
+    charset="utf-8" type="text/javascript"></script> <!-- https://code.jquery.com/jquery-3.3.1.min.js -->
+  <script type="text/javascript" src="scripts/qrcode.js"></script>
+</head>
+<style>
+  .fade-in-animation {
+  opacity: 0;
+  animation: fade-in-animation 3s forwards;
+}
+
+@keyframes fade-in-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+  .fade-in {
+    opacity: 0;
+    animation-name: fade-in;
+    animation-duration: 3.5s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+    .logo {
+    animation-name: spin;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  /* two-colomn layout */
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Create two equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .right-side-image {
+    float: right;
+    width: 300px;
+    border: 0px solid #004480;
+    padding: 10px;
+  }
+
+  /* global properties to apply to all images */
+  .img {
+    float: left;
+  }
+
+  /* qrcode generator image size */
+  #qrcode {
+    width:160px;
+    height:160px;
+    margin-top:15px;
+  }
+  .three_images
+  {
+    display: flex;
+  }
+  .image1
+  {
+    border: 2px solid#004480;
+  
+  }
+  .image2
+  {
+    border: 2px solid rebeccapurple;
+
+  }
+  .image3
+  {
+    border: 2px solid black;
+
+  }
+  .image4 img
+  {
+    border: 2px solid rgba(128, 126, 126, 0.466) ;
+  }
+  .column
+  {
+    flex: 33.33%;
+    padding: 5px;
+  }
+  /* email link */
+  a.email:link {color:#d00cbc88;}
+  a.email:hover {color:#9c9b9c; background:#66ff66;}
+</style>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Presentation <br><font color = "#000080"> 1</font></h1>
+  <p class="author">Shafqat Mashrakey</p>
+  <p class="date">Computer Science Department <br><font color = "#8080FF" style="text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Southern Connecticut State University</font></p>
+  <button id="view-fullscreen">[Fullscreen]</button>
+  <div class="three_images">
+    <div class="image1 column">
+      <img src="./images/scsu-logo-compact-blue.png" alt="scsu logo" style="width: 100%">
+      <p>this is scsu image</p>
+      <p>
+        to find more about this <a href="https://www.stcloudstate.edu/its/services/web-app/default.aspx" target="_blank"> click here</a>
+      </p>
+    </div>
+    <div class="image2 column">
+      <p style="margin: 4px;">computer logo</p>
+      <img src="./images/computer logo.jpeg" alt="computer logo" style="width: 50%"></div>
+    <div class="image3 column">
+      <p style="margin: 4px;">hacker man logo</p>
+      <img src="./images/istockphoto-911660906-612x612.jpg" alt="hacker man" style="width: 50%"></div>
+  </div>
+  <script type="text/javascript">
+    (function () {
+        var viewFullScreen = document.getElementById("view-fullscreen");
+        if (viewFullScreen) {
+            viewFullScreen.addEventListener("click", function () {
+                var docElm = document.documentElement;
+                if (docElm.requestFullscreen) {
+                    docElm.requestFullscreen();
+                }
+                else if (docElm.msRequestFullscreen) {
+                    docElm = document.body; //overwrite the element (for IE)
+                    docElm.msRequestFullscreen();
+                }
+                else if (docElm.mozRequestFullScreen) {
+                    docElm.mozRequestFullScreen();
+                }
+                else if (docElm.webkitRequestFullScreen) {
+                    docElm.webkitRequestFullScreen();
+                }
+            }, false);
+        }
+
+        var cancelFullScreen = document.getElementById("cancel-fullscreen");
+        if (cancelFullScreen) {
+            cancelFullScreen.addEventListener("click", function () {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+                else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+                else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                }
+                else if (document.webkitCancelFullScreen) {
+                    document.webkitCancelFullScreen();
+                }
+            }, false);
+        }
+
+        var fullscreenState = document.getElementById("fullscreen-state");
+        if (fullscreenState) {
+            document.addEventListener("fullscreenchange", function () {
+                fullscreenState.innerHTML = (document.fullscreenElement)? "" : "not ";
+            }, false);
+
+            document.addEventListener("msfullscreenchange", function () {
+                fullscreenState.innerHTML = (document.msFullscreenElement)? "" : "not ";
+            }, false);
+
+            document.addEventListener("mozfullscreenchange", function () {
+                fullscreenState.innerHTML = (document.mozFullScreen)? "" : "not ";
+            }, false);
+
+            document.addEventListener("webkitfullscreenchange", function () {
+                fullscreenState.innerHTML = (document.webkitIsFullScreen)? "" : "not ";
+            }, false);
+        }
+
+    })();
+    </script>
+</div>
+<div class="section slide level1" id="this"> 
+  <div class="fade-in">
+  <h1><i><u>My Focused Topics</i></u></h1>
+  </div>
+  <ul class="incremental">
+  <img src="./images/catwow.png" class="logo"> <br>
+  <li>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation"target="_blank">click here to learn how to do the spin animation</a>
+  </li>
+  <li>
+    <div class="fade-in-animation">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations" target="_blank">click here for fade in learning</a><br>
+    <img src="./images/cyborg.png" class="fade">
+    </div>
+  </li>
+  <li> Learn CSS position in 9 Minutes
+    (<a href="https://www.youtube.com/watch?v=jx5jmI0UlXU"  target=_blank><i>Reference</i></a>)
+  </li> 
+  <li>
+    <div class="image4 column">
+    <img src="./images/109-1090444_web-design-training-in-erode-web-design-logo.png" alt="web design logo" style="width: 100%">
+    <p>A web designing logo</p>
+    <p>
+      <a href="https://www.w3schools.com/html/html_images.asp" target="_blank"> Do you want to know how did i put Web design picture here? click here</a>
+    </p><br>
+    </div>
+  </li>
+  </ul>
+  </div>
+</div>
+<div class="=section slide level1" id ="map">
+  <h1>Map slide</h1>
+  <div class="incremental">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000.7050666050873!2d-73.22651459999996!3d41.2281973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e80ed2485bd365%3A0xcdee64b3d84f7ebe!2sTarget!5e0!3m2!1sen!2sus!4v1675736396823!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <b><p> 
+    This is the place where i work 
+    </b></p>
+  </div> 
+</div>
+<div class="section slide level1" id="this">
+  <ol class="incremental">
+  <h1><i>What can HTML enable for teaching and learning about your topic?</i></h1>
+  <ul class="incremental">
+    <li>
+      Tutorials and guides: Create tutorials and guides that walk learners through the process of creating animations step by step.
+    </li>
+    <li>
+      Visual aids: Diagrams or infographics can be used to illustrate the different components of an animation, such as keyframes, timing functions, and easing.
+    </li>
+    <li>
+      Interactive examples: HTML can be used to create interactive examples that demonstrate different types of animations and how they are implemented
+    </li>
+  </ul>
+  <h1><i>What can CSS enable for teaching and learning about your topic?</i></h1>
+  <ul class="incremental">
+    <li>Styling and design:CSS can be used to style and design animations, including specifying the timing, duration, and easing functions of the animation</li>
+    <li>Animation principles: timing, anticipation, and follow-through</li>
+    <li>Accessibility: CSS can be used to ensure that animations are accessible to all learners, including those who may have visual or cognitive impairments</li>
+    <li>Debugging and troubleshooting:  CSS can be used, how to debug and troubleshoot animation code.By providing examples of common CSS animation errors and how to fix them</li>
+  </ul>
+  <h1><i>What can JavaScript enable for teaching and learning about your topic?</i></h1>
+  <ul class="regular">
+  <li>Interactivity</li>
+  <li>Dynamic content</li>
+  <li>Event handling</li>
+  <li>Animation libraries</li>
+  <li>Debugging</li>
+  </ul>
+  <p>JavaScript can provide a powerful toolset for teaching and learning about animations, allowing learners to experiment with different techniques and explore new possibilities in an interactive and engaging way. By combining JavaScript with HTML and CSS, instructors can create a rich learning environment that helps learners master the principles of animation and develop their skills in this area.</p><br>
+  <ul class="regular">
+  <h1><i>How is SSL related in your web presentation?</i></h1>
+  <p>SSL can be used to provide secure access to the presentation materials and ensure that sensitive information is protected. For example, if the presentation includes a login system or a form for collecting user data, SSL can be used to encrypt the data and prevent it from being intercepted by unauthorized parties.In the context of my web presentation i have used firezilla software as online secured file transferring server.SSL can play an important role in ensuring the security and privacy of a web presentation, protecting both the presenter and the audience from potential security threats. By implementing SSL correctly, presenters can provide a safe and secure environment for sharing information and engaging with their audience online</p><br>
+  </ul>
+  <h1><i>How is HTTPS related to your web presentation?</i></h1>
+
+   <p>HTTPS (Hyper Text Transfer Protocol Secure) is a security protocol that is used to encrypt data that is transmitted over the internet. It is an extension of the HTTP protocol, which is used to transmit data between web servers and web browsers.In the context of a web presentation, HTTPS can be used to provide a secure and private channel for transmitting presentation materials between the server and the user's browser. This can help protect sensitive information that may be transmitted during the presentation, such as login credentials or personal data.
+   </p><br>
+  <h1><i>How is SFTP related to your web presentation?</i></h1>
+  <p>In the context of a web presentation, SFTP can be used to upload and download presentation materials, such as images, videos, or documents, to and from the web server. This can help ensure the privacy and security of the materials and protect against unauthorized access or interception of the data.SFTP is particularly useful for web presentations that require the transmission of large files or sensitive data, as it provides a secure and reliable channel for transferring these materials. By using SFTP, presenters can ensure that their presentation materials are protected and can be accessed by authorized users only.</p> 
+  <h1><i>How is the SCSU CSC 235 web server related to your web presentation?</i></h1>
+  <p>Through SCSU CSC 235 web server i can publish my webpage publicly.in this server I can also access my files securely by using SSL and i can transfer my images or documents through SFTP</p>
+  <h1><i>Do you recongize any opportunities for integrating a database to enhance your web presentation?</i></h1>
+  <p>Yes, integrating a database can offer several opportunities for enhancing a web presentation. integrating a database can offer many opportunities for enhancing a web presentation, providing more personalized, dynamic, and engaging experiences for your audience. However, it's important to design and implement a database carefully to ensure it is secure, reliable, and well-optimized for your needs.</p>
+  </ol>
+</div>
+
+<div class="section slide level1" id="that">
+  <h1><i>My learning outcome</i>?</h1>
+  <ul class="incremental">
+  <li>Reference you can use for learning
+    (<a href="https://open.umn.edu/opentextbooks/textbooks/203" target=_blank>more sources</a>)
+  <li><p><a href="https://southernct.blackboard.com/webapps/blackboard/content/listContent.jsp?course_id=_82056_1&content_id=_2637897_1&mode=reset" target=_blank>List</a></p>
+  <ul class="incremental">
+  <li> Now I can learn how to put images</li>
+  <li> Now I can embed map/show map</li>
+  <li> Now I can add multiple slides as well</li>
+  <li>Continuously review and assess the relevance and importance of any new learning outcomes to determine if they should be integrated into the presentation.</li>
+  <li>Gather feedback from users and stakeholders to determine their needs and requirements and adjust the presentation accordingly.</li>
+  <li>happy learning! :)</li>
+  <li>
+    <h1>My pdf file</h1>
+    <a href="presentation1.pdf">PDF</a>
+    <embed type="application/pdf"
+           src="presentation1.pdf"
+           alt="a pdf file of my writings"
+           width="80%"
+           height="800">
+  </li>
+  <ul> <p><u>References</u><br>
+   W3Schools. (2019). HTML Images. W3schools.com. https://www.w3schools.com/html/html_images.asp
+  </ul>
+  <ul>
+   CSS3 Animations: The @keyframes rule. Mozilla Developer Network. Retrieved February 13, 2023, from https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes</li>
+  </ul> 
+  </ul>
+</div>
+<div class="section slide level1" id="questions">
+  <h1>Questions?</h1>
+  <div class="fade-in fade">
+    <img src="./images/any question.png" alt="no questions meme">
+  </div>
+  <ul class="incremental">
+  <br><br><br><br><br><br><br><br><br>
+  <a class="email" href="mailto:mashrakey1@southernct.edu">
+  <ul style=
+    "text-align: middle;
+    font-family: Verdana,sans-serif;
+    text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">
+    mashrakeys1@southernct.edu</a>
+    <img class="right-side-image" src="scsu-logo-compact-blue.png"></ul>
+  </ul>
+</body>
+</html>
